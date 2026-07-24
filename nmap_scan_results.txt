@@ -1,0 +1,53 @@
+NMAP SCAN RESULT
+S
+Target IP:
+192.168.29.235
+
+1.basic scan
+command:
+nmap 192.168.29.235
+ Result:
+
+host is up
+open ports:
+22/tcp open ssh
+80/tcp open http
+998 closed TCP ports (reset)
+
+2.Service Version Scan
+
+command:
+sudo nmap -sV 192.168.29.235
+Result :
+
+22/tcp open ssh
+Version:openSSH 10.0p2 Debian 8
+(protocol 2.0)
+
+80/tcp open http
+version: Apache httpd 2.4.65(Debian)
+
+service Info:
+Operating System: Linux
+
+
+3.operating sytem detection 
+
+
+command:
+sudo nmap -O 192.168.29.235
+
+Result:
+
+os: linux
+Device: General purpose
+
+
+4.port Details
+
+
+port 22(sssh):
+secure remote login.
+Risk: Outdated web server may have vulnerable.
+
+Scan completed successfully
