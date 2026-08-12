@@ -1,0 +1,154 @@
+Nmap Network Scan Results
+
+1. Objective
+
+The objective of this task is to perform a basic network scan using Nmap to identify open ports, running services, service versions, and the operating system of a local machine or virtual machine.
+
+Tool Used: Nmap
+Target: Local machine / Authorized Virtual Machine
+Operating System: Kali Linux / Ubuntu / Windows
+Target IP: "<TARGET_IP>"
+
+---
+
+2. Basic Network Scan
+
+Command Used
+
+nmap <TARGET_IP>
+
+Result
+
+Starting Nmap ...
+Nmap scan report for <TARGET_IP>
+
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+80/tcp   open     http
+443/tcp  open     https
+
+«Replace the example results above with the actual output from your Nmap scan.»
+
+---
+
+3. Service Version Scan
+
+Command Used
+
+nmap -sV <TARGET_IP>
+
+Result
+
+PORT     STATE  SERVICE  VERSION
+22/tcp   open   ssh      OpenSSH <VERSION>
+80/tcp   open   http     Apache <VERSION>
+443/tcp  open   https    Apache <VERSION>
+
+The "-sV" option attempts to identify the software and version running on each discovered open port.
+
+---
+
+4. Operating System Detection
+
+Command Used
+
+sudo nmap -O <TARGET_IP>
+
+Result
+
+OS detection performed.
+OS details: <DETECTED OPERATING SYSTEM>
+
+The "-O" option attempts to identify the operating system of the target based on network characteristics.
+
+---
+
+5. Open Ports and Services
+
+Port| Protocol| Service| Purpose| Security Risk
+22| TCP| SSH| Provides secure remote login and administration.| Medium if exposed unnecessarily or poorly configured.
+80| TCP| HTTP| Provides web pages over HTTP.| Medium because HTTP traffic is not encrypted.
+443| TCP| HTTPS| Provides secure web communication using TLS.| Low to medium depending on configuration and software version.
+
+Note: Only include ports that actually appeared in your scan results.
+
+---
+
+6. Security Analysis
+
+Port 22 – SSH
+
+SSH is commonly used for secure remote administration of Linux and Unix systems. It encrypts communication between the client and server.
+
+Possible risks:
+
+- Weak passwords may allow unauthorized access.
+- Outdated SSH software may contain vulnerabilities.
+- Exposing SSH unnecessarily increases the attack surface.
+
+Security measures:
+
+- Use strong authentication.
+- Keep SSH software updated.
+- Disable SSH access when it is not required.
+- Restrict access to trusted networks where possible.
+
+Port 80 – HTTP
+
+HTTP is commonly used to provide websites and web applications.
+
+Possible risks:
+
+- HTTP does not encrypt normal web traffic.
+- Sensitive information can potentially be exposed if transmitted over HTTP.
+- Vulnerable web applications may be attacked through the exposed service.
+
+Security measures:
+
+- Use HTTPS instead of HTTP for sensitive communication.
+- Keep the web server and applications updated.
+- Configure appropriate firewall rules.
+
+Port 443 – HTTPS
+
+HTTPS provides encrypted communication between a web browser and web server using TLS.
+
+Possible risks:
+
+- Weak TLS configuration can reduce security.
+- Outdated web-server software may contain vulnerabilities.
+- Vulnerable web applications can still be attacked even when HTTPS is enabled.
+
+Security measures:
+
+- Keep TLS and web-server software updated.
+- Disable outdated protocols and weak cryptographic settings.
+- Regularly test and patch web applications.
+
+---
+
+7. Overall Findings
+
+The Nmap scan identified the open ports and services running on the authorized target system. Service detection using "-sV" provided information about the software versions, while OS detection using "-O" attempted to identify the target operating system.
+
+Open ports are not automatically vulnerabilities. However, every unnecessary exposed service increases the system's attack surface. Services should therefore be reviewed, updated, and restricted when they are not required.
+
+---
+
+8. Conclusion
+
+Nmap is useful for network security assessment because it helps administrators identify exposed services and understand the attack surface of a system.
+
+The scan should only be performed against systems that I own or have explicit permission to test. Based on the findings, unnecessary services should be disabled, required services should be properly configured, and software should be regularly patched.
+
+---
+
+9. Commands Used
+
+nmap <TARGET_IP>
+nmap -sV <TARGET_IP>
+sudo nmap -O <TARGET_IP>
+
+Target IP: "<TARGET_IP>"
+Date: August 12, 2026
+Tester: "<YOUR NAME>"
