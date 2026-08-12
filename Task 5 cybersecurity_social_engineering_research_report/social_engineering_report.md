@@ -1,4 +1,4 @@
-# Task 5 * Research Report: Social Engineering Attacks
+# Task 5 Research Report: Social Engineering Attacks
 
 ---
 
