@@ -1,1 +1,15 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-07-24 07:58 EDT
+Nmap scan report for 192.168.29.235
+Host is up (0.000079s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+Device type: general purpose
+Running: Linux 2.6.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6.32 cpe:/o:linux:linux_kernel:5 cpe:/o:linux:linux_kernel:6
+OS details: Linux 2.6.32, Linux 5.0 - 6.2
+Network Distance: 0 hops
 
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1.69 seconds
